@@ -1,5 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
-
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm";
+import { ParkingFloor } from "src/entities";
 @Entity()
 export class ParkingLot {
     @PrimaryGeneratedColumn()    
@@ -10,5 +10,8 @@ export class ParkingLot {
 
     @Column()
     address: string;
+
+    @OneToMany(()=> ParkingFloor, (floor)=> floor.parkingLot)
+    floors: ParkingFloor
 }
 

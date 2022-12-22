@@ -4,11 +4,13 @@ import { AppService } from './app.service';
 import { ParkingLotsModule } from './parking-lots/parking-lots.module';
 import { dataSourceOptions } from 'db/data-source';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ParkingFloorsModule } from './parking-floors/parking-floors.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(dataSourceOptions),
-    ParkingLotsModule],
+    ParkingLotsModule,
+    ParkingFloorsModule],
   controllers: [AppController],
   providers: [AppService],
 })

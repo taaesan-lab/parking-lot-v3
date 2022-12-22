@@ -13,3 +13,7 @@ nest g service parking-floors
 
 `npm run migration:generate -- db/migrations/Init`  
 `npm run migration:run` - Run the migration
+
+# Class-Validator & Class-Transformer
+
+`npm install class-validator class-transformer`
