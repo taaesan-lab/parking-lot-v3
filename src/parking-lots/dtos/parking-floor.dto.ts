@@ -1,6 +1,7 @@
-import { ParkingSlotDto } from './parking-slotdto';
+import { DeepPartial } from 'typeorm';
+import { ParkingSlotDto } from './parking-slot.dto';
 
 export class ParkingFloorDto {
   name: string;
-  slots: Array<ParkingSlotDto>;
+  slots: DeepPartial<ParkingSlotDto>;
 }

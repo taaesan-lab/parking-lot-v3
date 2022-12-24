@@ -12,11 +12,9 @@ Content-Type: application/json
                 { 
                 "name":"A1",
                 "avaliable":true,
-                "type":{
-                    "name":"small"
+                "type": "MEDIUM"
                 }
-                }
-                ]
+            ]
             }
         ]
 }

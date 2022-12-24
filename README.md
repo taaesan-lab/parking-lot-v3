@@ -9,6 +9,10 @@ nest g module parking-floors
 nest g controller parking-floors  
 nest g service parking-floors
 
+nest g module parking-slots  
+nest g controller parking-slots  
+nest g service parking-slots
+
 # Migration
 
 `npm run migration:generate -- db/migrations/Init`  
