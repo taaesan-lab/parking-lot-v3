@@ -10,6 +10,7 @@ export class ParkingLotsService {
   ) {}
 
   create(dto: CreateParkingLotDto) {
-    this.repo.create(dto);
+    let parkingLot = this.repo.create({ name: dto.name });
+    return this.repo.save(parkingLot);
   }
 }

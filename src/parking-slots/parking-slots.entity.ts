@@ -1,5 +1,11 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToOne } from 'typeorm';
-import { VehicleType } from '../entities';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  OneToOne,
+  OneToMany,
+} from 'typeorm';
+import { ParkingFloor, VehicleType } from '../entities';
 @Entity()
 export class ParkingSlot {
   @PrimaryGeneratedColumn()
@@ -13,4 +19,7 @@ export class ParkingSlot {
 
   @OneToOne(() => VehicleType)
   type: VehicleType;
+
+  @OneToMany(() => ParkingFloor, (floor) => floor.parkingSlots)
+  floor: ParkingFloor;
 }
