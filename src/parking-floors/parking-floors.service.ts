@@ -12,6 +12,6 @@ export class ParkingFloorsService {
 
   create(dto: ParkingFloorDto) {
     let parkingFloor = this.repo.create({ name: dto.name });
-    return parkingFloor;
+    return this.repo.save(parkingFloor);
   }
 }

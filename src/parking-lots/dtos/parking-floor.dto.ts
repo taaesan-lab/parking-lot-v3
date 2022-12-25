@@ -3,5 +3,5 @@ import { ParkingSlotDto } from './parking-slot.dto';
 
 export class ParkingFloorDto {
   name: string;
-  slots: DeepPartial<ParkingSlotDto>;
+  slots: ParkingSlotDto[];
 }

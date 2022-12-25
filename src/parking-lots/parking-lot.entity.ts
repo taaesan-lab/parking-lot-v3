@@ -8,8 +8,8 @@ export class ParkingLot {
   @Column()
   name: string;
 
-  @Column()
-  address: string;
+  @Column({ nullable: true })
+  address?: string;
 
   @OneToMany(() => ParkingFloor, (floor) => floor.parkingLot)
   floors: ParkingFloor[];
