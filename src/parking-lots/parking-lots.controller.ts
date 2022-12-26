@@ -18,16 +18,14 @@ export class ParkingLotsController {
   async create(@Body() body: CreateParkingLotDto) {
     console.log(JSON.stringify(body));
     const parkingLot = await this.parkingLotService.create(body);
-    console.log('bf for');
     for (let floor of body.floors) {
-      console.log('bf parkingFloorService');
       const parkingFloor = await this.parkingFloorService.create(floor);
-      // for (let slot of floor.slots) {
-      //   let vehicleType = await this.vehicleType.findOne(
-      //     slot.type.toLowerCase(),
-      //   );
-      //   await this.parkingSlotsService.create(slot, parkingFloor, vehicleType);
-      // }
+      for (let slot of floor.slots) {
+        let vehicleType = await this.vehicleType.findOne(
+          slot.type.toLowerCase(),
+        );
+        await this.parkingSlotsService.create(slot, parkingFloor, vehicleType);
+      }
     }
   }
 }

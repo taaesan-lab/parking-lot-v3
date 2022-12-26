@@ -4,15 +4,45 @@ POST http://localhost:3000/parking-lots/create
 Content-Type: application/json
 
 {
-    "name":"Central Rama 2",
+    "name":"Central Rama 3",
     "floors": [
             {
-            "name":"F1",
+            "name":"FL1",
             "slots":[
                 { 
                 "name":"A1",
                 "avaliable":true,
-                "type": "MEDIUM"
+                "type": "large"
+                },
+                { 
+                "name":"A2",
+                "avaliable":true,
+                "type": "small"
+                },
+                { 
+                "name":"A3",
+                "avaliable":true,
+                "type": "medium"
+                }
+            ]
+            },
+            {
+            "name":"FL2",
+            "slots":[
+                { 
+                "name":"A1",
+                "avaliable":true,
+                "type": "large"
+                },
+                { 
+                "name":"A2",
+                "avaliable":true,
+                "type": "small"
+                },
+                { 
+                "name":"A3",
+                "avaliable":true,
+                "type": "medium"
                 }
             ]
             }

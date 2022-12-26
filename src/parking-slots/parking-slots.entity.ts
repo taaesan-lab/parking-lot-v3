@@ -4,6 +4,8 @@ import {
   PrimaryGeneratedColumn,
   OneToOne,
   OneToMany,
+  ManyToOne,
+  JoinColumn,
 } from 'typeorm';
 import { ParkingFloor, VehicleType } from '../entities';
 @Entity()
@@ -17,9 +19,9 @@ export class ParkingSlot {
   @Column()
   avaliable: boolean;
 
-  @OneToOne(() => VehicleType)
-  type: VehicleType;
+  @ManyToOne(() => VehicleType)
+  vehicle_type: VehicleType;
 
-  @OneToMany(() => ParkingFloor, (floor) => floor.parkingSlots)
+  @ManyToOne(() => ParkingFloor, (floor) => floor.parkingSlots)
   floor: ParkingFloor;
 }

@@ -16,8 +16,9 @@ export class ParkingSlotsService {
       name: dto.name,
       avaliable: dto.avaliable,
     });
-    parkingSlot.type = vehicleType;
+    parkingSlot.vehicle_type = vehicleType;
     parkingSlot.floor = floor;
+    console.log('bf repo.save(parkingSlot)');
     return this.repo.save(parkingSlot);
   }
 }
