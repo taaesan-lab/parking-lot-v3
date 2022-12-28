@@ -31,3 +31,9 @@ Create an empty migration, for master data purpose
 # Class-Validator & Class-Transformer
 
 `npm install class-validator class-transformer`
+
+## Create a parking lot
+
+[Rest: Create a parking lot](./src/parking-lots/_rest.parking-lots.http)
+
+[Rest: Get avaliable slot](./src/parking-slots/_rest.parking-slots.http)

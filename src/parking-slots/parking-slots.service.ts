@@ -18,7 +18,15 @@ export class ParkingSlotsService {
     });
     parkingSlot.vehicle_type = vehicleType;
     parkingSlot.floor = floor;
-    console.log('bf repo.save(parkingSlot)');
     return this.repo.save(parkingSlot);
+  }
+
+  find(avaliable: boolean) {
+    //return this.repo.find({ where: { avaliable } });
+    return this.repo
+      .createQueryBuilder()
+      .select('*')
+      .where('avaliable=:avaliable', { avaliable })
+      .getRawMany();
   }
 }
