@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  postgres:
+    image: "postgres:14-bullseye"
+    container_name: posgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=postgres_password
+    networks:
+      - nestjs-network
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: ./api
+    container_name: parking-lot-api
+    ports:
+      - 3000:3000
+    volumes:
+      - /app/node_modules
+      - ./api:/app
+    environment:
+      - NODE_ENV=production
+      - PGUSER=postgres
+      - PGHOST=postgres
+      - PGDATABASE=postgres
+      - PGPASSWORD=postgres_password
+      - PGPORT=5432
+    networks:
+      - nestjs-network
+networks:
+  nestjs-network:
