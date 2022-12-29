@@ -1,4 +1,4 @@
 ###
 
-GET http://localhost:3000/parking-slots/slots?avaliable=true
+GET http://localhost:5000/parking-slots/slots?avaliable=true
 Content-Type: application/json

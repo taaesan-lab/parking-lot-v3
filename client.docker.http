@@ -1,10 +1,15 @@
-###
+### List avaliable slot
+GET http://localhost/api/parking-slots/slots?avaliable=true
+Content-Type: application/json
 
-POST http://localhost:5000/parking-lots/create
+
+### Create a new parking lot
+
+POST http://localhost/api/parking-lots/create
 Content-Type: application/json
 
 {
-    "name":"Central Rama 3",
+    "name":"Central Rama 2",
     "floors": [
             {
             "name":"FL1",
