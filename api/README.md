@@ -9,6 +9,7 @@
 `nest create parking-lot-v3`  
 `npm install --save @nestjs/typeorm typeorm sqlite3 pg`  
 `npm install class-validator class-transformer`
+`npm install typeorm-naming-strategies --save`
 
 ## Modules
 
