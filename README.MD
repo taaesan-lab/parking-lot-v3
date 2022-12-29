@@ -1,3 +1,7 @@
+# Parking Lot V3
+
+![Project Architecture](./api/assets/Architecture.jpg)
+
 ## Docker
 
 ### Production Run
