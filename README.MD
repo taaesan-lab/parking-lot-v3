@@ -1,4 +1,4 @@
-# Docker
+## Docker
 
 ### Production Run
 
@@ -8,7 +8,7 @@ Start container in background mode
 Stop with clean up resources  
 `docker-compose down -v`
 
-### Prodution Migrtion
+### Production Migrtion
 
 `docker exec -it parking-lot-api printenv`
 
