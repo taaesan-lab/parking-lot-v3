@@ -16,7 +16,7 @@ export class ParkingSlotsService {
       name: dto.name,
       avaliable: dto.avaliable,
     });
-    parkingSlot.vehicle_type = vehicleType;
+    parkingSlot.vehicleType = vehicleType;
     parkingSlot.floor = floor;
     return this.repo.save(parkingSlot);
   }

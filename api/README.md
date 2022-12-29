@@ -28,14 +28,24 @@
 `nest g controller vehicle-type`  
 `nest g service vehicle-type`
 
+`nest g module vehicle`  
+`nest g controller vehicle`  
+`nest g service vehicle`
+
+`nest g module ticket`  
+`nest g controller ticket`  
+`nest g service ticket`
+
 # Migration
 
 Create schema migration  
-`npm run migration:generate -- db/development/migrations/Init`  
-`npm run migration:run` - Run the migration
+`npm run migration:generate -- db/development/migrations/SQLiteInit`
 
-Create an empty migration, for master data purpose  
+Create an empty migration, for master data insertion  
 `npm run migration:create db/development/migrations/MasterData`
+
+Execute the migration  
+`npm run migration:run`
 
 ## APIs
 

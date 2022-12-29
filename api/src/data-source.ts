@@ -1,6 +1,15 @@
 import { DataSource, DataSourceOptions } from 'typeorm';
+import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 
 console.log('process.env.NODE_ENV: ' + process.env.NODE_ENV);
+if (
+  process.env.NODE_ENV === undefined ||
+  (process.env.NODE_ENV !== 'production' &&
+    process.env.NODE_ENV !== 'development')
+) {
+  console.error('Please provide valid value for NODE_ENV');
+  process.exit(1);
+}
 
 export let dataSourceOptions: DataSourceOptions;
 
@@ -15,14 +24,16 @@ if (process.env.NODE_ENV === 'production') {
     entities: ['dist/**/*.entity.js'],
     migrations: ['dist/db/production/migrations/*.js'],
     logging: true,
+    namingStrategy: new SnakeNamingStrategy(),
   };
 } else if (process.env.NODE_ENV === 'development') {
   dataSourceOptions = {
     type: 'sqlite',
-    database: 'db/db.sqlite',
+    database: 'db/development.sqlite',
     entities: ['dist/**/*.entity.js'],
     migrations: ['dist/db/development/migrations/*.js'],
     logging: true,
+    namingStrategy: new SnakeNamingStrategy(),
   };
 }
 

@@ -7,6 +7,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ParkingFloorsModule } from './parking-floors/parking-floors.module';
 import { ParkingSlotsModule } from './parking-slots/parking-slots.module';
 import { VehicleTypeModule } from './vehicle-type/vehicle-type.module';
+import { VehicleModule } from './vehicle/vehicle.module';
+import { TicketModule } from './ticket/ticket.module';
 
 @Module({
   imports: [
@@ -15,6 +17,8 @@ import { VehicleTypeModule } from './vehicle-type/vehicle-type.module';
     ParkingFloorsModule,
     ParkingSlotsModule,
     VehicleTypeModule,
+    VehicleModule,
+    TicketModule,
   ],
   controllers: [AppController],
   providers: [AppService],

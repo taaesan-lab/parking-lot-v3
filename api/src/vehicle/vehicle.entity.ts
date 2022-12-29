@@ -9,19 +9,16 @@ import {
 } from 'typeorm';
 import { ParkingFloor, VehicleType } from '../entities';
 @Entity()
-export class ParkingSlot {
+export class Vehicle {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  name: string;
+  plate_number: string;
 
   @Column()
   avaliable: boolean;
 
   @ManyToOne(() => VehicleType)
-  vehicleType: VehicleType;
-
-  @ManyToOne(() => ParkingFloor, (floor) => floor.parkingSlots)
-  floor: ParkingFloor;
+  vehicle_type: VehicleType;
 }
