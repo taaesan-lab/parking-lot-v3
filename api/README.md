@@ -22,11 +22,11 @@ nest g service vehicle-type
 # Migration
 
 Create schema migration
-`npm run migration:generate -- db/migrations/Init`  
+`npm run migration:generate -- db/development/migrations/Init`  
 `npm run migration:run` - Run the migration
 
 Create an empty migration, for master data purpose  
-`npm run migration:create db/migrations/MasterData`
+`npm run migration:create db/development/migrations/MasterData`
 
 # Class-Validator & Class-Transformer
 
